@@ -24,8 +24,8 @@ export function BenefitsCarousel({ items }: Props) {
   const [isEnd, setIsEnd] = useState(false);
 
   return (
-    <div className="flex flex-col gap-8">
-      <div className="flex items-start justify-end">
+    <div className="benefits-tilt-wrap flex flex-col gap-4">
+      <div className="benefits-tilt-nav flex items-start justify-end">
         <div className="flex gap--16">
           <CircleArrowButton
             direction="prev"
@@ -42,58 +42,54 @@ export function BenefitsCarousel({ items }: Props) {
         </div>
       </div>
 
-      <Swiper
-        className="benefits-swiper"
-        slidesPerView={1.2}
-        centeredSlides
-        spaceBetween={24}
-        grabCursor
-        observer
-        observeParents
-        watchOverflow
-        breakpoints={{
-          640: { slidesPerView: 1.8, spaceBetween: 24 },
-          992: { slidesPerView: 2.6, spaceBetween: 32 },
-          1280: { slidesPerView: 3, spaceBetween: 32 },
-        }}
-        onSwiper={(s) => {
-          swiperRef.current = s;
-          setIsBeginning(s.isBeginning);
-          setIsEnd(s.isEnd);
-          requestAnimationFrame(() => s.update());
-        }}
-        onSlideChange={(s) => {
-          setIsBeginning(s.isBeginning);
-          setIsEnd(s.isEnd);
-        }}
-      >
-        {items.map((item) => {
-          const Icon = item.icon;
-          return (
-            <SwiperSlide key={item.title}>
-              <article className="glass-card h-full flex flex-col gap-5 min-h-[22rem]">
-                <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white/5 text-[#e4a8ff]">
-                  <Icon strokeWidth={1.5} />
-                </span>
-                <h3 className="text-2xl font-medium leading-tight text-white">
-                  {item.title}
-                </h3>
-                <p className="text-color-ddbbf1 text-size-16-16-14">
-                  {item.description}
-                </p>
-                <div className="mt-auto rounded-xl bg-white/5 p-4">
-                  <div className="text-xs uppercase tracking-wide text-[#c89bff] mb-1">
-                    Impact
+      <div className="benefits-tilt-stage">
+        <Swiper
+          className="benefits-swiper benefits-tilt-swiper"
+          slidesPerView={1.1}
+          spaceBetween={24}
+          grabCursor
+          breakpoints={{
+            640: { slidesPerView: 2, spaceBetween: 24 },
+            992: { slidesPerView: 3, spaceBetween: 32 },
+          }}
+          onSwiper={(s) => {
+            swiperRef.current = s;
+            setIsBeginning(s.isBeginning);
+            setIsEnd(s.isEnd);
+          }}
+          onSlideChange={(s) => {
+            setIsBeginning(s.isBeginning);
+            setIsEnd(s.isEnd);
+          }}
+        >
+          {items.map((item) => {
+            const Icon = item.icon;
+            return (
+              <SwiperSlide key={item.title} style={{ height: "auto" }}>
+                <article className="benefit-tilt-card glass-card flex h-full flex-col gap-4 p-6">
+                  <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white/5 text-[#e4a8ff]">
+                    <Icon strokeWidth={1.5} />
+                  </span>
+                  <h3 className="text-xl font-medium leading-tight text-white">
+                    {item.title}
+                  </h3>
+                  <p className="text-color-ddbbf1 text-sm leading-relaxed">
+                    {item.description}
+                  </p>
+                  <div className="rounded-xl bg-white/5 p-3">
+                    <div className="mb-1 text-[0.65rem] uppercase tracking-wide text-[#c89bff]">
+                      Impact
+                    </div>
+                    <div className="text-sm font-medium text-white">
+                      {item.impact}
+                    </div>
                   </div>
-                  <div className="text-white text-sm font-medium">
-                    {item.impact}
-                  </div>
-                </div>
-              </article>
-            </SwiperSlide>
-          );
-        })}
-      </Swiper>
+                </article>
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
+      </div>
     </div>
   );
 }
