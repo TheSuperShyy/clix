@@ -7,10 +7,35 @@ import type { ServiceStep } from "@/components/scroll-pinned-services";
 import { SectionLabel } from "@/components/section-label";
 import { GradientText } from "@/components/gradient-text";
 
+type IntroProps = {
+  label: string;
+  headingLead: string;
+  headingGradient: string;
+  description: string;
+};
+
 type Props = {
   steps: ServiceStep[];
   ctaHref: string;
+  intro?: IntroProps;
 };
+
+function IntroPanel({ intro }: { intro: IntroProps }) {
+  return (
+    <div className="hscroll-panel">
+      <div className="hscroll-intro">
+        <SectionLabel>{intro.label}</SectionLabel>
+        <h2 className="text-size-h2 text-color-white">
+          {intro.headingLead}{" "}
+          <GradientText>{intro.headingGradient}</GradientText>
+        </h2>
+        <p className="text-size-16-16-14 text-color-ddbbf1 text-weight-300">
+          {intro.description}
+        </p>
+      </div>
+    </div>
+  );
+}
 
 function StepPanel({ index, step }: { index: number; step: ServiceStep }) {
   const Icon = step.icon;
@@ -114,14 +139,14 @@ function FinalPanel({ ctaHref }: { ctaHref: string }) {
   );
 }
 
-export function HorizontalServices({ steps, ctaHref }: Props) {
+export function HorizontalServices({ steps, ctaHref, intro }: Props) {
   const ref = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end end"],
   });
 
-  const totalPanels = steps.length + 1;
+  const totalPanels = (intro ? 1 : 0) + steps.length + 1;
   const x = useTransform(
     scrollYProgress,
     [0, 1],
@@ -137,6 +162,7 @@ export function HorizontalServices({ steps, ctaHref }: Props) {
       <div className="sticky top-0 h-screen overflow-hidden">
         <div className="hscroll-chain" />
         <motion.div className="hscroll-track" style={{ x }}>
+          {intro && <IntroPanel intro={intro} />}
           {steps.map((step, i) => (
             <StepPanel key={step.title} step={step} index={i} />
           ))}

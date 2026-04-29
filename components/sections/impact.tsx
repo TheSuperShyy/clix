@@ -1,9 +1,13 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useScroll, useTransform, type MotionValue } from "motion/react";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  type MotionValue,
+} from "motion/react";
 import { Sparkles, Settings2 } from "lucide-react";
-import { SectionLabel } from "@/components/section-label";
 import { IMPACT } from "@/content/impact";
 
 type CardPos = {
@@ -16,10 +20,10 @@ type CardPos = {
 };
 
 const POSITIONS: CardPos[] = [
-  { top: "12%", left: "4%", parallax: -50, rotate: -2 },
-  { top: "6%", right: "6%", parallax: -90, rotate: 1.5 },
-  { bottom: "18%", left: "22%", parallax: -130, rotate: -1 },
-  { bottom: "10%", right: "8%", parallax: -70, rotate: 2 },
+  { top: "10%", left: "2%", parallax: 90, rotate: -2 },
+  { top: "6%", right: "3%", parallax: 110, rotate: 1.5 },
+  { bottom: "8%", left: "5%", parallax: 130, rotate: -1 },
+  { bottom: "4%", right: "2%", parallax: 100, rotate: 2 },
 ];
 
 function FloatCard({
@@ -31,7 +35,13 @@ function FloatCard({
 }) {
   const metric = IMPACT[index];
   const pos = POSITIONS[index];
-  const y = useTransform(progress, [0, 1], [pos.parallax * -0.5, pos.parallax]);
+
+  // Pure parallax — each card translates linearly with scroll position.
+  // Different parallax magnitudes per card create depth (some move faster
+  // than others). No fade or blur: cards are always solid when the section
+  // is in the viewport, and naturally absent before/after because they live
+  // inside the section's bounds.
+  const y = useTransform(progress, [0, 1], [pos.parallax, -pos.parallax]);
 
   return (
     <motion.div
@@ -45,10 +55,6 @@ function FloatCard({
         rotate: pos.rotate,
         willChange: "transform",
       }}
-      initial={{ opacity: 0, scale: 0.92 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.6, delay: index * 0.06, ease: [0.215, 0.61, 0.355, 1] }}
     >
       {metric.highlight && (
         <div className="absolute top-4 right-4 flex items-center gap-2">
@@ -79,24 +85,26 @@ export function Impact() {
     <section
       id="impact"
       ref={ref}
-      className="relative overflow-hidden py-40 lg:py-52"
+      className="section-light relative overflow-hidden py-32 lg:py-44"
     >
-      <div className="container relative">
-        <div className="flex justify-center">
-          <SectionLabel>Key Stats</SectionLabel>
+      <div className="container relative min-h-[40rem] lg:min-h-[44rem]">
+        <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center gap-6">
+          <span className="light-label">Key Stats</span>
+          <motion.div
+            className="text-center"
+            style={{ y: wordmarkY, willChange: "transform" }}
+          >
+            <div
+              className="text-size-16-16-14 mb-3"
+              style={{ color: "#0b0216" }}
+            >
+              The Impact,
+            </div>
+            <div className="impact-wordmark font-medium leading-[0.9] tracking-tight text-[clamp(4rem,13vw,13rem)]">
+              Quantified
+            </div>
+          </motion.div>
         </div>
-
-        <motion.div
-          className="pointer-events-none mt-6 text-center"
-          style={{ y: wordmarkY, willChange: "transform" }}
-        >
-          <div className="text-size-16-16-14 text-color-white mb-3">
-            The Impact,
-          </div>
-          <div className="span-h1-gradient font-medium leading-[0.9] tracking-tight text-[clamp(5rem,14vw,14rem)]">
-            Quantified
-          </div>
-        </motion.div>
 
         <div
           className="pointer-events-none absolute inset-0"
