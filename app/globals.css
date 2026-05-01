@@ -1029,7 +1029,8 @@ a {
 
 /* ---------- Swiper overrides ---------- */
 
-.swiper {
+.stack-container .swiper,
+.case-studies-swiper {
   overflow: visible !important;
 }
 .swiper-slide {
@@ -1117,33 +1118,185 @@ a {
 
 .stack-container {
   position: relative;
+  min-height: 30rem;
+}
+.stack-container .swiper {
+  overflow: visible !important;
 }
 .stack-container .swiper-wrapper {
+  transform: none !important;
   position: relative;
+  min-height: 30rem;
 }
 .stack-container .swiper-slide {
-  position: absolute;
+  position: absolute !important;
   top: 0;
   left: 0;
   width: 100%;
   opacity: 0;
-  transform: translateY(1rem) rotate(1.2deg);
-  transition: opacity 500ms ease, transform 500ms ease;
+  visibility: hidden;
+  transform: translateY(-3.5rem);
+  transition:
+    opacity 520ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 640ms cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0s linear 520ms;
+  pointer-events: none;
+  z-index: 1;
+}
+.stack-container .swiper-slide.swiper-slide-next {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(3.5rem);
+  z-index: 2;
 }
 .stack-container .swiper-slide.swiper-slide-active {
   opacity: 1;
-  transform: translateY(0) rotate(0deg);
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
   z-index: 3;
+  transition:
+    opacity 520ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 640ms cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0s linear 0s;
 }
-.stack-container .swiper-slide.swiper-slide-next {
-  opacity: 0.5;
-  transform: translateY(0.6rem) rotate(-1.5deg);
-  z-index: 2;
+
+/* ---------- Envelope case-study wrap ---------- */
+
+.envelope-wrap {
+  position: relative;
+  isolation: isolate;
+  min-height: 24rem;
+  overflow: hidden;
+  perspective: 1400px;
 }
-.stack-container .swiper-slide.swiper-slide-prev {
-  opacity: 0.5;
-  transform: translateY(0.6rem) rotate(1.5deg);
+/* Envelope back panel — the bottom 16rem of the wrap is the envelope body */
+.envelope-back {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 16rem;
+  background: linear-gradient(180deg, #0f0520 0%, #0b0418 100%);
+  border: 1px solid rgba(171, 0, 255, 0.18);
+  border-radius: 1rem;
+  z-index: 0;
+}
+/* Letter sits inside envelope body; animates translateY from hidden to half-out */
+.envelope-letter-layer {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
   z-index: 2;
+  will-change: transform;
+}
+.case-letter {
+  position: relative;
+  background: #140827;
+  border-radius: 1rem;
+  padding: 2rem;
+  border: 1px solid rgba(171, 0, 255, 0.22);
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.7);
+}
+.case-letter-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.06);
+  margin: 0.25rem 0;
+}
+.case-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 0.9rem;
+  border-radius: 0.6rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+/* Envelope front face — covers lower portion of letter, V-notch at top */
+.envelope-front {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 8rem;
+  background: linear-gradient(180deg, #1a0a30 0%, #0d041c 100%);
+  z-index: 3;
+  pointer-events: none;
+  clip-path: polygon(0 0, 50% 2.25rem, 100% 0, 100% 100%, 0 100%);
+  border-bottom: 1px solid rgba(171, 0, 255, 0.25);
+  border-left: 1px solid rgba(171, 0, 255, 0.25);
+  border-right: 1px solid rgba(171, 0, 255, 0.25);
+  border-radius: 0 0 1rem 1rem;
+}
+/* Envelope flap — sits at top of envelope body, hinges open on scroll. z-index below letter so rotated flap reads as behind the emerged letter */
+.envelope-flap {
+  position: absolute;
+  bottom: 8rem;
+  left: 0;
+  right: 0;
+  height: 8rem;
+  z-index: 1;
+  transform-origin: top center;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  pointer-events: none;
+  will-change: transform;
+}
+.envelope-flap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #1d0b36 0%, #140827 100%);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  box-shadow: inset 0 -20px 30px -20px rgba(0, 0, 0, 0.6);
+}
+.envelope-flap-seam {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+}
+.envelope-emblem {
+  position: absolute;
+  left: 50%;
+  bottom: 2rem;
+  transform: translateX(-50%);
+  width: 2.25rem;
+  height: 2.25rem;
+  color: rgba(171, 0, 255, 0.4);
+  z-index: 4;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+.envelope-emblem svg {
+  width: 100%;
+  height: 100%;
+}
+@media (max-width: 991px) {
+  .envelope-wrap {
+    min-height: 22rem;
+  }
+  .envelope-back {
+    height: 14rem;
+  }
+  .envelope-front {
+    height: 7rem;
+    clip-path: polygon(0 0, 50% 1.75rem, 100% 0, 100% 100%, 0 100%);
+  }
+  .envelope-flap {
+    bottom: 7rem;
+    height: 7rem;
+  }
+  .envelope-emblem {
+    bottom: 1.75rem;
+  }
 }
 
 /* ---------- FAQ accordion ---------- */
