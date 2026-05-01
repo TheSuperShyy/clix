@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import type { Swiper as SwiperType } from "swiper";
 import "swiper/css";
@@ -20,8 +20,6 @@ type Props = {
 
 export function BenefitsCarousel({ items }: Props) {
   const swiperRef = useRef<SwiperType | null>(null);
-  const [isBeginning, setIsBeginning] = useState(true);
-  const [isEnd, setIsEnd] = useState(false);
 
   return (
     <div className="benefits-tilt-wrap flex flex-col gap-4">
@@ -29,13 +27,11 @@ export function BenefitsCarousel({ items }: Props) {
         <div className="flex gap--16">
           <CircleArrowButton
             direction="prev"
-            disabled={isBeginning}
             onClick={() => swiperRef.current?.slidePrev()}
             label="Previous benefit"
           />
           <CircleArrowButton
             direction="next"
-            disabled={isEnd}
             onClick={() => swiperRef.current?.slideNext()}
             label="Next benefit"
           />
@@ -48,18 +44,13 @@ export function BenefitsCarousel({ items }: Props) {
           slidesPerView={1.1}
           spaceBetween={24}
           grabCursor
+          loop
           breakpoints={{
             640: { slidesPerView: 2, spaceBetween: 24 },
             992: { slidesPerView: 3, spaceBetween: 32 },
           }}
           onSwiper={(s) => {
             swiperRef.current = s;
-            setIsBeginning(s.isBeginning);
-            setIsEnd(s.isEnd);
-          }}
-          onSlideChange={(s) => {
-            setIsBeginning(s.isBeginning);
-            setIsEnd(s.isEnd);
           }}
         >
           {items.map((item) => {
