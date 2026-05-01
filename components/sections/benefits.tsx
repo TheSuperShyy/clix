@@ -9,7 +9,7 @@ import { BENEFITS } from "@/content/benefits";
 export function Benefits() {
   return (
     <section id="benefits" className="py-24 lg:py-32">
-      <div className="container flex flex-col gap-12">
+      <div className="container is-wide flex flex-col gap-12">
         <Reveal axis="y" distance={24}>
           <div className="flex flex-col gap-5 max-w-3xl">
             <SectionLabel>Why CLIX</SectionLabel>

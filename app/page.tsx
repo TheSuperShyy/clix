@@ -4,7 +4,7 @@ import { Features } from "@/components/sections/features";
 import { Services } from "@/components/sections/services";
 import { Benefits } from "@/components/sections/benefits";
 import { Impact } from "@/components/sections/impact";
-import { CaseStudies } from "@/components/sections/case-studies";
+import { Testimonials } from "@/components/sections/testimonials";
 import { FAQ } from "@/components/sections/faq";
 import { Footer } from "@/components/sections/footer";
 
@@ -18,7 +18,7 @@ export default function Home() {
         <Services />
         <Benefits />
         <Impact />
-        <CaseStudies />
+        <Testimonials />
         <FAQ />
       </main>
       <Footer />

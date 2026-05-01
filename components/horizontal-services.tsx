@@ -2,7 +2,13 @@
 
 import { useRef } from "react";
 import { ArrowRight } from "lucide-react";
-import { motion, useScroll, useTransform } from "motion/react";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useMotionValue,
+  useMotionTemplate,
+} from "motion/react";
 import type { ServiceStep } from "@/components/scroll-pinned-services";
 import { SectionLabel } from "@/components/section-label";
 import { GradientText } from "@/components/gradient-text";
@@ -40,23 +46,54 @@ function IntroPanel({ intro }: { intro: IntroProps }) {
 function StepPanel({ index, step }: { index: number; step: ServiceStep }) {
   const Icon = step.icon;
   const offset = index % 2 === 0 ? "" : "mt-40";
+  const cardRef = useRef<HTMLElement | null>(null);
+  const mouseX = useMotionValue(-200);
+  const mouseY = useMotionValue(-200);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
+    if (!cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    mouseX.set(e.clientX - rect.left);
+    mouseY.set(e.clientY - rect.top);
+  };
+
+  const handleMouseLeave = () => {
+    mouseX.set(-200);
+    mouseY.set(-200);
+  };
+
+  const spotlight = useMotionTemplate`radial-gradient(360px circle at ${mouseX}px ${mouseY}px, rgba(127, 0, 255, 0.22), rgba(127, 0, 255, 0) 55%)`;
+
   return (
     <div className="hscroll-panel">
       <div className="hscroll-chain-link" />
-      <article className={`hscroll-step ${offset}`}>
-        <div className="flex items-center gap-3">
+      <motion.article
+        ref={cardRef}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        whileHover={{ y: -6 }}
+        transition={{ type: "spring", stiffness: 300, damping: 22 }}
+        className={`hscroll-step ${offset}`}
+      >
+        <motion.div
+          aria-hidden
+          className="hscroll-step-spotlight"
+          style={{ background: spotlight }}
+        />
+        <span className="hscroll-step-border" aria-hidden />
+        <div className="relative z-[1] flex items-center gap-3">
           <span className="hscroll-step-number">
             {String(index + 1).padStart(2, "0")}
           </span>
-          <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 text-[#e4a8ff]">
+          <span className="hscroll-step-icon inline-flex h-10 w-10 items-center justify-center rounded-xl">
             <Icon strokeWidth={1.5} className="h-5 w-5" />
           </span>
         </div>
-        <h3 className="text-2xl lg:text-3xl font-medium leading-tight text-white">
+        <h3 className="relative z-[1] text-2xl lg:text-3xl font-medium leading-tight text-white">
           {step.title}
         </h3>
-        <p className="text-color-ddbbf1 text-size-16-16-14">{step.tagline}</p>
-        <ul className="flex flex-col gap-2.5">
+        <p className="relative z-[1] text-color-ddbbf1 text-size-16-16-14">{step.tagline}</p>
+        <ul className="relative z-[1] flex flex-col gap-2.5">
           {step.bullets.map((b) => (
             <li
               key={b}
@@ -70,7 +107,7 @@ function StepPanel({ index, step }: { index: number; step: ServiceStep }) {
             </li>
           ))}
         </ul>
-      </article>
+      </motion.article>
     </div>
   );
 }

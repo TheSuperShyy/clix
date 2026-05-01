@@ -11,6 +11,26 @@
   --color-glass: rgba(171, 0, 255, 0.08);
   --font-sans: var(--font-dm-sans);
   --radius: 1rem;
+  --animate-marquee: marquee var(--duration) infinite linear;
+  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+@keyframes marquee-vertical {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+  }
 }
 
 :root {
@@ -353,6 +373,10 @@ a {
 
 .container.is-narrow {
   max-width: 70rem;
+}
+
+.container.is-wide {
+  max-width: 88rem;
 }
 
 .container.is-header {
@@ -834,15 +858,72 @@ a {
   position: relative;
   z-index: 1;
   max-width: 28rem;
-  background: #140a22;
+  background: linear-gradient(180deg, #1a0e2a 0%, #100820 100%);
   border-radius: 1.5rem;
   padding: 2.25rem;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: none;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  isolation: isolate;
+  overflow: hidden;
+}
+.hscroll-step-spotlight {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 350ms ease;
+  z-index: 0;
+}
+.hscroll-step:hover .hscroll-step-spotlight {
+  opacity: 1;
+}
+.hscroll-step-border {
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.14),
+    rgba(255, 255, 255, 0.02)
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  transition: background 400ms ease;
+  z-index: 0;
+}
+.hscroll-step:hover .hscroll-step-border {
+  background: linear-gradient(
+    135deg,
+    rgba(180, 100, 255, 0.55),
+    rgba(127, 0, 255, 0.08)
+  );
+}
+.hscroll-step-icon {
+  background: linear-gradient(
+    135deg,
+    rgba(127, 0, 255, 0.18),
+    rgba(127, 0, 255, 0.06)
+  );
+  border: 1px solid rgba(180, 100, 255, 0.22);
+  color: #e4a8ff;
+  transition: transform 400ms ease, color 400ms ease,
+    box-shadow 400ms ease;
+}
+.hscroll-step:hover .hscroll-step-icon {
+  transform: scale(1.06);
+  color: #f0d2ff;
+  box-shadow: 0 0 24px rgba(127, 0, 255, 0.3);
 }
 .hscroll-step-number {
+  position: relative;
+  z-index: 1;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -854,6 +935,11 @@ a {
   color: #ffffff;
   font-size: 0.9rem;
   font-weight: 500;
+  transition: background 400ms ease, border-color 400ms ease;
+}
+.hscroll-step:hover .hscroll-step-number {
+  background: rgba(127, 0, 255, 0.15);
+  border-color: rgba(180, 100, 255, 0.4);
 }
 .hscroll-chain-link {
   position: absolute;
@@ -950,24 +1036,82 @@ a {
   height: auto;
 }
 
-.benefits-swiper .swiper-slide {
-  opacity: 0.4;
-  transition: opacity 600ms cubic-bezier(0.25, 1, 0.5, 1),
-    margin-top 600ms cubic-bezier(0.25, 1, 0.5, 1),
-    transform 600ms cubic-bezier(0.25, 1, 0.5, 1);
-  margin-top: 0;
+.benefits-swiper {
+  overflow: hidden;
 }
-.benefits-swiper .swiper-slide.swiper-slide-active {
-  opacity: 1;
-  margin-top: -3rem;
+
+/* ---------- Benefits 3D tilt perspective ---------- */
+
+.benefits-tilt-wrap {
   position: relative;
-  z-index: 10;
-  transform: translateY(-1rem);
+  margin-top: -2rem;
+}
+.benefits-tilt-nav {
+  margin-bottom: -1rem;
+}
+.benefits-tilt-stage {
+  position: relative;
+  padding-top: 0.5rem;
+  height: 24rem;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to bottom,
+    #000 0,
+    #000 82%,
+    rgba(0, 0, 0, 0.4) 94%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    #000 0,
+    #000 82%,
+    rgba(0, 0, 0, 0.4) 94%,
+    transparent 100%
+  );
+}
+.benefits-tilt-swiper {
+  overflow: visible !important;
+  transform: rotate(-8deg);
+  transform-origin: 50% 30%;
+}
+.benefit-tilt-card {
+  min-height: 26rem;
+  background: #0f0720;
+  border-radius: 1.5rem;
+  box-shadow: 0 40px 80px -30px rgba(0, 0, 0, 0.8),
+    0 8px 20px -10px rgba(0, 0, 0, 0.6);
+}
+.benefit-tilt-card::before {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.01)
+  );
 }
 @media (max-width: 991px) {
-  .benefits-swiper .swiper-slide.swiper-slide-active {
-    margin-top: -1rem;
+  .benefits-tilt-stage {
+    height: 22rem;
+  }
+  .benefits-tilt-swiper {
+    transform: rotate(-6deg);
+  }
+  .benefit-tilt-card {
+    min-height: 22rem;
+  }
+}
+@media (max-width: 479px) {
+  .benefits-tilt-stage {
+    height: auto;
+    overflow: visible;
+    mask-image: none;
+    -webkit-mask-image: none;
+    padding-top: 0;
+  }
+  .benefits-tilt-swiper {
     transform: none;
+  }
+  .benefit-tilt-card {
+    min-height: 0;
   }
 }
 
