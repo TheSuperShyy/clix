@@ -13,6 +13,7 @@
   --radius: 1rem;
   --animate-marquee: marquee var(--duration) infinite linear;
   --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+  --animate-footer-marquee: footer-marquee 40s linear infinite;
 }
 
 @keyframes marquee {
@@ -31,6 +32,55 @@
   to {
     transform: translateY(calc(-100% - var(--gap)));
   }
+}
+
+.animate-marquee,
+.animate-marquee-vertical {
+  will-change: transform;
+}
+
+@keyframes footer-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-footer-marquee {
+  will-change: transform;
+}
+
+.footer-pill {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.04) 0%,
+    rgba(255, 255, 255, 0.012) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5),
+    inset 0 1px 1px rgba(255, 255, 255, 0.05);
+  transform: perspective(600px)
+    translate3d(var(--mx, 0px), var(--my, 0px), 0)
+    rotateX(var(--rx, 0deg))
+    rotateY(var(--ry, 0deg))
+    scale(var(--scale, 1));
+  transform-origin: center;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    background 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.footer-pill:hover {
+  --scale: 1.04;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  border-color: rgba(180, 100, 255, 0.32);
+  box-shadow: 0 14px 40px -10px rgba(127, 0, 255, 0.45),
+    inset 0 1px 1px rgba(255, 255, 255, 0.08);
 }
 
 :root {
