@@ -17,7 +17,7 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
     title: "Company",
     links: [
       { label: "Why CLIX", href: "#benefits" },
-      { label: "Case Studies", href: "#case-studies" },
+      { label: "Clients", href: "#clients" },
       { label: "FAQ", href: "#faq" },
       { label: "Contact", href: "#contact" },
     ],

@@ -4,6 +4,7 @@ import { GlassButton } from "@/components/glass-button";
 import { GradientText } from "@/components/gradient-text";
 import { HeroLabel } from "@/components/hero-label";
 import { Reveal } from "@/components/reveal";
+import { GridBeam } from "@/components/ui/background-grid-beam";
 import { HERO } from "@/content/hero";
 
 const ICONS: Record<string, ReactNode> = {
@@ -17,7 +18,8 @@ const CHIP_OFFSETS = ["lg:-ml-10", "lg:ml-16", "lg:-ml-4"];
 export function Hero() {
   return (
     <section className="position-relative overflow-hidden">
-      <div className="container is-hero">
+      <GridBeam />
+      <div className="container is-hero relative z-10">
         <div className="grid h-full grid-cols-1 lg:grid-cols-[1.2fr_1fr] items-center gap-12">
           <div className="flex-v justify-center gap--48-48-32">
             <Reveal axis="y" distance={32}>

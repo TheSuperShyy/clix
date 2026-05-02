@@ -11,8 +11,28 @@ import { CTA_HREF } from "@/content/nav";
 function FinalCTA({ ctaHref }: { ctaHref: string }) {
   return (
     <div className="hscroll-final">
-      <div className="hscroll-logo">
-        <svg viewBox="0 0 320 240" fill="none" className="h-full w-full">
+      <div className="hscroll-logo relative">
+        <span
+          aria-hidden
+          className="pointer-events-none absolute inset-0 z-0"
+          style={{
+            backgroundColor: "rgba(179, 102, 255, 0.35)",
+            WebkitMaskImage: "url('/logos/clix-logo.png')",
+            maskImage: "url('/logos/clix-logo.png')",
+            WebkitMaskSize: "contain",
+            maskSize: "contain",
+            WebkitMaskRepeat: "no-repeat",
+            maskRepeat: "no-repeat",
+            WebkitMaskPosition: "center",
+            maskPosition: "center",
+            transform: "scale(1.45) translate(-20%, 2%)",
+          }}
+        />
+        <svg
+          viewBox="0 0 320 240"
+          fill="none"
+          className="relative z-10 h-full w-full"
+        >
           <defs>
             <linearGradient id="clixGrad" x1="0" y1="0" x2="1" y2="1">
               <stop offset="0%" stopColor="#f0ccff" />
