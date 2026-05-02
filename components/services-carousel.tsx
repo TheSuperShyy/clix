@@ -137,16 +137,18 @@ export function ServicesCarousel() {
               const isPrev = status === "prev";
               const isNext = status === "next";
 
+              if (!isActive && !isPrev && !isNext) return null;
+
               return (
                 <motion.div
                   key={service.title}
                   initial={false}
                   animate={{
-                    x: isActive ? 0 : isPrev ? -80 : isNext ? 80 : 0,
-                    scale: isActive ? 1 : isPrev || isNext ? 0.88 : 0.7,
-                    opacity: isActive ? 1 : isPrev || isNext ? 0.35 : 0,
+                    x: isActive ? 0 : isPrev ? -80 : 80,
+                    scale: isActive ? 1 : 0.88,
+                    opacity: isActive ? 1 : 0.35,
                     rotate: isPrev ? -2 : isNext ? 2 : 0,
-                    zIndex: isActive ? 20 : isPrev || isNext ? 10 : 0,
+                    zIndex: isActive ? 20 : 10,
                     pointerEvents: isActive ? "auto" : "none",
                   }}
                   transition={{
@@ -156,31 +158,21 @@ export function ServicesCarousel() {
                     mass: 0.9,
                   }}
                   className="absolute inset-0 rounded-[1.75rem] overflow-hidden border border-white/10 origin-center"
-                  style={{ backgroundColor: "#0a0414" }}
+                  style={{
+                    backgroundColor: "#0a0414",
+                    backgroundImage:
+                      "radial-gradient(circle at 28% 22%, rgba(127,0,255,0.5) 0%, rgba(127,0,255,0.14) 32%, transparent 62%), radial-gradient(circle at 82% 88%, rgba(225,0,255,0.38) 0%, transparent 60%)",
+                    willChange: "transform, opacity",
+                    contain: "layout paint",
+                  }}
                 >
-                  <div
-                    className="absolute inset-0"
-                    style={{
-                      background:
-                        "radial-gradient(circle at 28% 22%, rgba(127,0,255,0.55) 0%, rgba(127,0,255,0.18) 32%, transparent 62%), radial-gradient(circle at 82% 88%, rgba(225,0,255,0.42) 0%, rgba(225,0,255,0.08) 35%, transparent 65%)",
-                    }}
-                  />
-                  <div
-                    className="absolute inset-0 opacity-[0.18] mix-blend-screen"
-                    style={{
-                      backgroundImage:
-                        "radial-gradient(rgba(255,255,255,0.45) 1px, transparent 1px)",
-                      backgroundSize: "18px 18px",
-                    }}
-                  />
-
                   <div className="absolute inset-x-0 top-[18%] flex justify-center">
                     <div className="relative">
                       <div
-                        className="pointer-events-none absolute -inset-12 rounded-full blur-3xl opacity-70"
+                        className="pointer-events-none absolute -inset-10 rounded-full blur-2xl opacity-70"
                         style={{
                           background:
-                            "radial-gradient(circle, rgba(225,0,255,0.55) 0%, rgba(127,0,255,0.3) 45%, transparent 72%)",
+                            "radial-gradient(circle, rgba(225,0,255,0.5) 0%, rgba(127,0,255,0.26) 45%, transparent 72%)",
                         }}
                       />
                       <div
@@ -188,37 +180,21 @@ export function ServicesCarousel() {
                         style={{
                           background:
                             "linear-gradient(140deg, rgba(255,255,255,0.55) 0%, rgba(180,100,255,0.18) 32%, rgba(255,255,255,0.06) 58%, rgba(225,0,255,0.55) 100%)",
-                          boxShadow:
-                            "0 30px 60px -25px rgba(127,0,255,0.55), 0 20px 40px -20px rgba(0,0,0,0.7)",
+                          boxShadow: "0 24px 50px -22px rgba(127,0,255,0.55)",
                         }}
                       >
                         <div
                           className="relative h-32 w-32 md:h-36 md:w-36 rounded-[1.75rem] overflow-hidden flex items-center justify-center"
                           style={{
                             background:
-                              "linear-gradient(160deg, rgba(20,8,38,0.96) 0%, rgba(8,3,18,1) 100%)",
+                              "linear-gradient(160deg, rgba(20,8,38,0.96) 0%, rgba(8,3,18,1) 100%), radial-gradient(ellipse at 50% 0%, rgba(225,0,255,0.32) 0%, rgba(127,0,255,0.1) 38%, transparent 70%)",
                           }}
                         >
-                          <div
-                            className="absolute inset-0"
-                            style={{
-                              background:
-                                "radial-gradient(ellipse at 50% 0%, rgba(225,0,255,0.32) 0%, rgba(127,0,255,0.1) 38%, transparent 70%)",
-                            }}
-                          />
                           <div
                             className="absolute top-0 left-5 right-5 h-px"
                             style={{
                               background:
                                 "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.45) 50%, transparent 100%)",
-                            }}
-                          />
-                          <div
-                            className="absolute inset-0 opacity-[0.08]"
-                            style={{
-                              backgroundImage:
-                                "radial-gradient(rgba(255,255,255,0.6) 1px, transparent 1px)",
-                              backgroundSize: "10px 10px",
                             }}
                           />
                           <Icon
@@ -227,7 +203,7 @@ export function ServicesCarousel() {
                             stroke="url(#clixServiceIconGradient)"
                             style={{
                               filter:
-                                "drop-shadow(0 2px 8px rgba(225,0,255,0.45))",
+                                "drop-shadow(0 2px 6px rgba(225,0,255,0.45))",
                             }}
                           />
                         </div>
@@ -243,7 +219,7 @@ export function ServicesCarousel() {
                         exit={{ opacity: 0, y: 8 }}
                         className="absolute inset-x-0 bottom-0 p-7 pt-24 bg-gradient-to-t from-black/95 via-black/55 to-transparent flex flex-col gap-3 pointer-events-none"
                       >
-                        <div className="inline-flex items-center gap-2 self-start rounded-full border border-white/15 bg-black/40 px-3 py-1 text-[0.65rem] font-medium uppercase tracking-[0.22em] text-white/85 backdrop-blur">
+                        <div className="inline-flex items-center gap-2 self-start rounded-full border border-white/15 bg-black/55 px-3 py-1 text-[0.65rem] font-medium uppercase tracking-[0.22em] text-white/85">
                           {String(index + 1).padStart(2, "0")} ·{" "}
                           {service.title}
                         </div>
