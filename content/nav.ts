@@ -3,7 +3,7 @@ export type NavLink = { label: string; href: string };
 export const NAV_LINKS: NavLink[] = [
   { label: "Services", href: "#services" },
   { label: "Why CLIX", href: "#benefits" },
-  { label: "Case Studies", href: "#case-studies" },
+  { label: "Clients", href: "#clients" },
   { label: "FAQ", href: "#faq" },
 ];
 

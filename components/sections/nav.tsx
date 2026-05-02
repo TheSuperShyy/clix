@@ -71,10 +71,29 @@ export function Nav() {
       data-hidden={hidden}
     >
       <div className="container is-header flex items-center justify-between">
-        <a href="#" className="flex items-center gap-2">
-          <span className="text-xl font-semibold tracking-tight text-white">
-            CLIX
-          </span>
+        <a
+          href="#"
+          aria-label="CLIX home"
+          className="flex items-center gap-2.5 text-white"
+        >
+          <span
+            aria-hidden
+            className="block shrink-0"
+            style={{
+              height: "2.25rem",
+              aspectRatio: "405 / 357",
+              backgroundColor: "currentColor",
+              WebkitMaskImage: "url('/logos/clix-logo.png')",
+              maskImage: "url('/logos/clix-logo.png')",
+              WebkitMaskSize: "contain",
+              maskSize: "contain",
+              WebkitMaskRepeat: "no-repeat",
+              maskRepeat: "no-repeat",
+              WebkitMaskPosition: "center",
+              maskPosition: "center",
+            }}
+          />
+          <span className="text-xl font-semibold tracking-tight">CLIX</span>
         </a>
 
         <nav className="desktop-only flex items-center gap--32">
