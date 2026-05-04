@@ -89,7 +89,7 @@ export function Impact() {
     >
       <div className="container relative min-h-[40rem] lg:min-h-[44rem]">
         <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center gap-6">
-          <span className="light-label">Key Stats</span>
+          <span className="light-label">המספרים שלנו</span>
           <motion.div
             className="text-center"
             style={{ y: wordmarkY, willChange: "transform" }}
@@ -98,10 +98,10 @@ export function Impact() {
               className="text-size-16-16-14 mb-3"
               style={{ color: "#0b0216" }}
             >
-              The Impact,
+              ההשפעה,
             </div>
             <div className="impact-wordmark font-medium leading-[0.9] tracking-tight text-[clamp(4rem,13vw,13rem)]">
-              Quantified
+              במספרים.
             </div>
           </motion.div>
         </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import {
   motion,
   useScroll,
@@ -158,16 +158,16 @@ function FinalPanel({ ctaHref }: { ctaHref: string }) {
           </svg>
         </div>
         <div className="hscroll-final-text">
-          <SectionLabel>Next step</SectionLabel>
+          <SectionLabel>השלב הבא</SectionLabel>
           <h3 className="text-4xl lg:text-6xl font-medium leading-[1.05] tracking-tight text-white">
-            Ready for more{" "}
-            <GradientText>qualified conversations,</GradientText> and less
-            manual work?
+            רוצים יותר{" "}
+            <GradientText>שיחות איכותיות,</GradientText> ופחות
+            עבודה ידנית?
           </h3>
           <a href={ctaHref} className="try-now-btn">
-            <span>Try it now</span>
+            <span>התחילו עכשיו</span>
             <span className="arrow">
-              <ArrowRight className="h-4 w-4" strokeWidth={2} />
+              <ArrowLeft className="h-4 w-4" strokeWidth={2} />
             </span>
           </a>
         </div>

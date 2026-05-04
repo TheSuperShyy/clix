@@ -12,11 +12,11 @@ import { cn } from "@/lib/utils";
 import { FOOTER_TAGS, FOOTER_CONTACT } from "@/content/footer";
 
 const FOOTER_PILL_LINKS = [
-  { label: "Services", href: "#services" },
-  { label: "Why CLIX", href: "#benefits" },
-  { label: "FAQ", href: "#faq" },
-  { label: "Privacy", href: "#" },
-  { label: "Terms", href: "#" },
+  { label: "שירותים", href: "#services" },
+  { label: "למה CLIX", href: "#benefits" },
+  { label: "שאלות נפוצות", href: "#faq" },
+  { label: "פרטיות", href: "#" },
+  { label: "תנאי שימוש", href: "#" },
 ];
 
 function applyMagnetic(el: HTMLElement, e: ReactMouseEvent<HTMLElement>) {
@@ -76,7 +76,7 @@ function MagneticButton({
 
 function FooterTagRow() {
   return (
-    <div className="flex items-center gap-12 px-6 whitespace-nowrap">
+    <div className="flex shrink-0 items-center gap-12 px-6 whitespace-nowrap">
       {FOOTER_TAGS.map((tag, i) => (
         <Fragment key={`${tag}-${i}`}>
           <span>{tag}</span>
@@ -170,10 +170,14 @@ export function Footer() {
           CLIX
         </motion.div>
 
-        <div className="relative z-10 mt-16 -rotate-2 scale-110 overflow-hidden border-y border-white/[0.08] bg-black/30 py-4 shadow-2xl">
+        <div
+          dir="ltr"
+          className="relative z-10 mt-16 -rotate-2 scale-110 overflow-hidden border-y border-white/[0.08] bg-black/30 py-4 shadow-2xl"
+        >
           <div className="animate-footer-marquee flex w-max text-xs md:text-sm font-bold uppercase tracking-[0.3em] text-color-ddbbf1/70">
-            <FooterTagRow />
-            <FooterTagRow />
+            {Array.from({ length: 4 }).map((_, i) => (
+              <FooterTagRow key={i} />
+            ))}
           </div>
         </div>
 
@@ -193,7 +197,7 @@ export function Footer() {
               filter: "drop-shadow(0 0 18px rgba(127,0,255,0.2))",
             }}
           >
-            Ready to ship?
+            מוכנים לזוז?
           </motion.h2>
 
           <motion.div
@@ -205,8 +209,8 @@ export function Footer() {
                 href="#contact"
                 className="flex items-center gap-3 rounded-full px-8 py-4 text-sm font-bold text-white md:text-base"
               >
-                Book a Demo
-                <span aria-hidden>→</span>
+                קבעו דמו
+                <span aria-hidden>←</span>
               </MagneticLink>
               <MagneticLink
                 href={`mailto:${FOOTER_CONTACT.email}`}
@@ -232,15 +236,15 @@ export function Footer() {
 
         <div className="relative z-20 flex w-full flex-col items-center justify-between gap-5 px-6 pb-8 md:flex-row md:px-12">
           <div className="order-2 text-[10px] font-semibold uppercase tracking-widest text-color-ddbbf1/70 md:order-1 md:text-xs">
-            © 2026 CLIX. Built in Israel.
+            © 2026 CLIX. נבנה בישראל.
           </div>
 
           <div className="footer-pill order-1 flex cursor-default items-center gap-2 rounded-full px-6 py-3 md:order-2">
             <span className="text-[10px] font-semibold uppercase tracking-widest text-color-ddbbf1/70 md:text-xs">
-              Engineered by
+              נבנה על ידי
             </span>
             <span className="ml-1 text-xs font-black tracking-normal text-white md:text-sm">
-              8200 + Technion
+              8200 + הטכניון
             </span>
           </div>
 
@@ -248,7 +252,7 @@ export function Footer() {
             type="button"
             onClick={scrollToTop}
             className="group order-3 flex h-12 w-12 items-center justify-center rounded-full text-color-ddbbf1 hover:text-white"
-            aria-label="Back to top"
+            aria-label="חזרה למעלה"
           >
             <ArrowUp
               className="h-5 w-5 transition-transform duration-300 group-hover:-translate-y-1"

@@ -10,9 +10,9 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "CLIX — Hyper-Automation for Operators",
+  title: "CLIX — היפר-אוטומציה לאנשי הביצוע",
   description:
-    "Israeli Hyper-Automation agency. Engineers from Unit 8200 and the Technion shipping AI agents, voice, and integrations that eliminate human-dependent bottlenecks.",
+    "סוכנות היפר-אוטומציה ישראלית. מהנדסים מיחידה 8200 ומהטכניון בונים סוכני AI, סוכני קול ואינטגרציות שמסירים צווארי בקבוק תלויי-אדם בעסק שלכם.",
 };
 
 export const viewport: Viewport = {
@@ -28,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={dmSans.variable}>
+    <html lang="he" dir="rtl" className={dmSans.variable}>
       <body>{children}</body>
     </html>
   );

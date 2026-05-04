@@ -11,12 +11,12 @@ export function FAQ() {
       <div className="container max-w-4xl mx-auto flex flex-col gap-10">
         <Reveal axis="y" distance={24}>
           <div className="flex flex-col items-start gap-5">
-            <SignalPill />
+            <SignalPill label="שאלות נפוצות" />
             <h2 className="text-size-h2 text-color-white max-w-2xl">
-              Questions <GradientText>worth asking.</GradientText>
+              השאלות <GradientText>ששווה לשאול.</GradientText>
             </h2>
             <p className="text-size-16-16-14 text-color-ddbbf1 text-weight-300 max-w-xl">
-              If you don't see yours here, send it over — we answer directly.
+              לא מצאתם את השאלה שלכם? שלחו לנו אותה — אנחנו עונים אישית.
             </p>
           </div>
         </Reveal>

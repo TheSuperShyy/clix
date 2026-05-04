@@ -10,45 +10,45 @@ import type { BenefitItem } from "@/components/benefits-carousel";
 
 export const BENEFITS: BenefitItem[] = [
   {
-    title: "Engineer-Led",
+    title: "ישירות מהמהנדסים",
     description:
-      "No agency middle-layer. You work directly with the people who ship the code and own the outcome.",
-    impact: "Decisions happen in hours, not weeks.",
+      "בלי שכבת ביניים של סוכנויות. אתם עובדים מול האנשים שכותבים את הקוד ולוקחים אחריות על התוצאה.",
+    impact: "החלטות מתקבלות בשעות, לא בשבועות.",
     icon: ShieldCheck,
   },
   {
-    title: "Custom-Coded, Not Templated",
+    title: "קוד מותאם אישית, לא תבניות",
     description:
-      "We don't glue together no-code templates and hope. Every system is built for your workflow.",
-    impact: "No ceilings when you need to scale.",
+      "אנחנו לא מחברים תבניות No-Code בתקווה שזה יעבוד. כל מערכת נבנית מאפס סביב תהליך העבודה שלכם.",
+    impact: "אין תקרות כשצריך להתרחב.",
     icon: Code2,
   },
   {
-    title: "Integration-Deep",
+    title: "אינטגרציות לעומק",
     description:
-      "We bridge into Salesforce, HubSpot, Monday, WhatsApp, and legacy systems that never got an API.",
-    impact: "Your existing stack gets smarter, not replaced.",
+      "אנחנו מתחברים ל-Salesforce, HubSpot, Monday, WhatsApp ולמערכות לגאסי שמעולם לא קיבלו API.",
+    impact: "המערכות הקיימות שלכם נעשות חכמות יותר, לא מוחלפות.",
     icon: Link2,
   },
   {
-    title: "No-Bullshit",
+    title: "בלי בולשיט",
     description:
-      "We ship systems, not slide decks. If a project won't clear the ROI bar, we'll tell you before we start.",
-    impact: "Zero wasted retainers.",
+      "אנחנו מספקים מערכות, לא מצגות. אם פרויקט לא מחזיר את ההשקעה — נגיד לכם לפני שמתחילים.",
+    impact: "אפס ריטיינרים מבוזבזים.",
     icon: MessageCircleOff,
   },
   {
-    title: "ROI-First",
+    title: "ROI במרכז",
     description:
-      "Every engagement is scoped against hours saved, errors eliminated, and revenue unlocked — measured monthly.",
-    impact: "You see the payback on the invoice.",
+      "כל פרויקט נמדד בשעות שנחסכו, בטעויות שנמנעו ובהכנסות שנוצרו — מדידה חודשית, ללא מסכים.",
+    impact: "החזר ההשקעה רואים על החשבונית.",
     icon: TrendingUp,
   },
   {
-    title: "8200-Built",
+    title: "באים מ-8200",
     description:
-      "Founders and engineers from Unit 8200 and the Technion. Systems thinking and signal-to-noise instincts baked in.",
-    impact: "Mission-critical rigor, startup velocity.",
+      "המייסדים והמהנדסים הם בוגרי יחידה 8200 והטכניון. חשיבה מערכתית ושכל ישר זה חלק מה-DNA.",
+    impact: "קפדנות של מערכות קריטיות, מהירות של סטארטאפ.",
     icon: Cpu,
   },
 ];

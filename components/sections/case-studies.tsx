@@ -12,13 +12,13 @@ export function CaseStudies() {
       <div className="container flex flex-col gap-12">
         <Reveal axis="y" distance={24}>
           <div className="flex flex-col gap-5 max-w-3xl">
-            <SectionLabel>Case studies</SectionLabel>
+            <SectionLabel>סיפורי לקוחות</SectionLabel>
             <h2 className="text-size-h2 text-color-white">
-              Real systems, <GradientText>real numbers.</GradientText>
+              מערכות אמיתיות, <GradientText>מספרים אמיתיים.</GradientText>
             </h2>
             <p className="text-size-16-16-14 text-color-ddbbf1 text-weight-300">
-              Selected engagements where hours saved and errors eliminated are
-              measurable — not marketing.
+              פרויקטים נבחרים שבהם השעות שנחסכו והטעויות שנמנעו הם נתון מדיד —
+              לא סיסמה שיווקית.
             </p>
           </div>
         </Reveal>

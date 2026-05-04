@@ -16,39 +16,39 @@ export type FeatureItem = {
 
 export const FEATURES: FeatureItem[] = [
   {
-    title: "AI Voice Agents",
+    title: "סוכני קול AI",
     description:
-      "Conversational voice bots that answer phones and make calls in 30+ languages, with human-like latency.",
+      "בוטים קוליים שיחתיים שעונים לטלפון ויוזמים שיחות במעל 30 שפות, בקצב שיחה אנושי לחלוטין.",
     icon: Phone,
   },
   {
-    title: "Lead Qualification Bots",
+    title: "בוטים לסינון לידים",
     description:
-      "WhatsApp and Instagram agents that vet inbound leads and only book qualified ones on your calendar.",
+      "סוכנים ב-WhatsApp וב-Instagram שמסננים לידים נכנסים, ומתאמים ביומן רק את אלה שעברו סינון.",
     icon: MessageSquare,
   },
   {
-    title: "Logistics Automation",
+    title: "אוטומציה ללוגיסטיקה",
     description:
-      "Invoice collection from email, daily route sync, and mileage reconciliation — hands-off.",
+      "איסוף חשבוניות מהמייל, סנכרון מסלולים יומי והתאמת קילומטראז' — ללא מגע יד אדם.",
     icon: Truck,
   },
   {
-    title: "Healthcare & Therapy Intake",
+    title: "קליטת מטופלים בבריאות וטיפולים",
     description:
-      "Ticket management and patient-intake agents that ask the right follow-ups and route cases by urgency.",
+      "ניהול פניות וסוכני קליטה ששואלים את שאלות ההמשך הנכונות ומנתבים מקרים לפי דחיפות.",
     icon: Stethoscope,
   },
   {
-    title: "Content Factory",
+    title: "מפעל תוכן",
     description:
-      "Automated pipelines that turn one idea into daily LinkedIn, Facebook, and Instagram posts.",
+      "תהליכים אוטומטיים שהופכים רעיון אחד לפוסטים יומיים ב-LinkedIn, Facebook ו-Instagram.",
     icon: Clapperboard,
   },
   {
-    title: "Custom Integrations",
+    title: "אינטגרציות מותאמות",
     description:
-      "Salesforce, HubSpot, Monday, ClickUp, Slack — plus custom API bridges for software that doesn't usually talk to AI.",
+      "Salesforce, HubSpot, Monday, ClickUp, Slack — וגם גשרי API לכלים שבדרך כלל לא יודעים לתקשר עם AI.",
     icon: Cable,
   },
 ];

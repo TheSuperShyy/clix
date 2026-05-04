@@ -70,6 +70,7 @@ export function CaseStudiesCarousel({ items }: Props) {
             style={{ y: letterY, opacity: letterOpacity }}
           >
             <Swiper
+              dir="rtl"
               slidesPerView={1}
               loop={false}
               observer
@@ -102,14 +103,14 @@ export function CaseStudiesCarousel({ items }: Props) {
                     </h3>
                     <div className="case-letter-divider" />
                     <div className="flex flex-col gap-2">
-                      <div className="text-sm text-[#c89bff]">Challenge:</div>
+                      <div className="text-sm text-[#c89bff]">האתגר:</div>
                       <p className="text-white text-size-16-16-14 font-medium">
                         {item.challenge}
                       </p>
                     </div>
                     <div className="case-letter-divider" />
                     <div className="flex flex-col gap-2">
-                      <div className="text-sm text-[#c89bff]">Solution:</div>
+                      <div className="text-sm text-[#c89bff]">הפתרון:</div>
                       <p className="text-white text-size-16-16-14 font-medium">
                         {item.solution}
                       </p>

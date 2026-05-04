@@ -35,7 +35,7 @@ export function ClientsWall() {
         className="flex flex-row items-center gap-3"
         style={{
           transform:
-            "translateX(40px) translateZ(-60px) rotateX(10deg) rotateY(-8deg) rotateZ(8deg)",
+            "translateX(-40px) translateZ(-60px) rotateX(10deg) rotateY(8deg) rotateZ(-8deg)",
           willChange: "transform",
         }}
       >
@@ -58,7 +58,7 @@ export function ClientsWall() {
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "linear-gradient(90deg, #07030f 0%, rgba(7,3,15,0.95) 32%, rgba(7,3,15,0.55) 52%, transparent 75%)",
+            "linear-gradient(270deg, #07030f 0%, rgba(7,3,15,0.95) 32%, rgba(7,3,15,0.55) 52%, transparent 75%)",
         }}
       />
       <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#07030f] to-transparent" />

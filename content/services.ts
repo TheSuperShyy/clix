@@ -9,57 +9,57 @@ import type { ServiceStep } from "@/components/scroll-pinned-services";
 
 export const SERVICES: ServiceStep[] = [
   {
-    title: "AI Voice Solutions",
+    title: "פתרונות קול AI",
     tagline:
-      "Realistic, conversational voice agents that pick up the phone and make outbound calls — in 30+ languages, at human latency.",
+      "סוכני קול שיחתיים ומציאותיים שעונים לטלפון ויוזמים שיחות יוצאות — במעל 30 שפות, בקצב שיחה אנושי לחלוטין.",
     bullets: [
-      "Seamless language switching for global teams",
-      "Round-the-clock availability without fatigue",
-      "Transfers live to a rep when intent is confirmed",
+      "מעבר חלק בין שפות לצוותים גלובליים",
+      "זמינות מסביב לשעון, ללא הפסקה",
+      "העברה חיה לנציג כשמתאשרת כוונת קנייה",
     ],
     icon: PhoneCall,
   },
   {
-    title: "Lead Qualification Agents",
+    title: "סוכני סינון לידים",
     tagline:
-      "Reasoning agents on WhatsApp, Instagram, and web that vet inbound leads and only book qualified ones on your calendar.",
+      "סוכנים חכמים ב-WhatsApp, Instagram ובאתר שמסננים לידים נכנסים ומתאמים ביומן רק את אלה שעברו סינון.",
     bullets: [
-      "Ask follow-ups based on the prospect's answers",
-      "Disqualify noise, protect your reps' time",
-      "Hand off with full context — no repeats",
+      "שאלות המשך מותאמות לתשובות הפרוספקט",
+      "סינון רעש ושמירה על זמן הנציגים",
+      "העברה עם הקשר מלא — בלי לחזור על דברים",
     ],
     icon: Bot,
   },
   {
-    title: "Business Architecture",
+    title: "ארכיטקטורה עסקית",
     tagline:
-      "We map manual workflows and replace them with automated data pathways using Make.com, n8n, and Python.",
+      "אנחנו ממפים תהליכים ידניים ומחליפים אותם בזרימות דאטה אוטומטיות בעזרת Make.com, n8n ו-Python.",
     bullets: [
-      "Process discovery — find the bottlenecks first",
-      "Custom-coded, not templated",
-      "Measurable ROI: hours saved, errors eliminated",
+      "מיפוי תהליכים — מאתרים את צווארי הבקבוק קודם",
+      "קוד מותאם אישית, לא תבניות",
+      "ROI מדיד: שעות שנחסכו, טעויות שנמנעו",
     ],
     icon: Network,
   },
   {
-    title: "Custom Integrations",
+    title: "אינטגרציות מותאמות",
     tagline:
-      "Salesforce, HubSpot, Monday, ClickUp, WhatsApp, Slack — plus API bridges for the tools that weren't built to talk to AI.",
+      "Salesforce, HubSpot, Monday, ClickUp, WhatsApp, Slack — וגם גשרי API לכלים שלא נבנו כדי לדבר עם AI.",
     bullets: [
-      "Bidirectional sync across your existing stack",
-      "Bridges for legacy systems",
-      "Built once, owned by you",
+      "סנכרון דו-כיווני בין כל הכלים שלכם",
+      "גשרים למערכות לגאסי",
+      "נבנה פעם אחת — ונשאר אצלכם לתמיד",
     ],
     icon: PlugZap,
   },
   {
-    title: "Training & Transformation",
+    title: "הדרכה והטמעה",
     tagline:
-      "Workshops and consulting that move traditional companies into the AI-first era — your team runs the system after us.",
+      "סדנאות וייעוץ שמעבירים חברות מסורתיות לעידן ה-AI — הצוות שלכם מריץ את המערכת אחרינו.",
     bullets: [
-      "Lectures for leadership and operators",
-      "Playbooks tailored to your industry",
-      "Ongoing enablement, not a handoff",
+      "הרצאות להנהלה ולצוותי התפעול",
+      "פלייבוקים מותאמים לתעשייה שלכם",
+      "ליווי מתמשך, לא העברת מפתחות חד-פעמית",
     ],
     icon: GraduationCap,
   },

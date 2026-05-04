@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { Reveal } from "@/components/reveal";
 import { SectionLabel } from "@/components/section-label";
 import { GradientText } from "@/components/gradient-text";
@@ -73,16 +73,16 @@ function FinalCTA({ ctaHref }: { ctaHref: string }) {
         </svg>
       </div>
       <div className="hscroll-final-text">
-        <SectionLabel>Next step</SectionLabel>
+        <SectionLabel>השלב הבא</SectionLabel>
         <h3 className="text-4xl lg:text-6xl font-medium leading-[1.05] tracking-tight text-white">
-          Ready for more{" "}
-          <GradientText>qualified conversations,</GradientText> and less manual
-          work?
+          רוצים יותר{" "}
+          <GradientText>שיחות איכותיות,</GradientText> ופחות עבודה
+          ידנית?
         </h3>
         <a href={ctaHref} className="try-now-btn">
-          <span>Try it now</span>
+          <span>התחילו עכשיו</span>
           <span className="arrow">
-            <ArrowRight className="h-4 w-4" strokeWidth={2} />
+            <ArrowLeft className="h-4 w-4" strokeWidth={2} />
           </span>
         </a>
       </div>
@@ -97,15 +97,14 @@ export function Services() {
         <div className="container flex flex-col gap-14 lg:gap-16">
           <Reveal axis="y" distance={24}>
             <div className="flex flex-col gap-5 max-w-3xl">
-              <SectionLabel>How it Works</SectionLabel>
+              <SectionLabel>איך זה עובד</SectionLabel>
               <h2 className="text-size-h2 text-color-white">
-                Your path from leads to{" "}
-                <GradientText>live conversations.</GradientText>
+                הדרך מהלידים שלכם{" "}
+                <GradientText>לשיחות חיות.</GradientText>
               </h2>
               <p className="text-size-16-16-14 text-color-ddbbf1 text-weight-300">
-                Convert leads from your CRM, lists, or calls into qualified
-                prospects eager to engage with your sales team or set
-                appointments.
+                הופכים לידים מה-CRM, מהרשימות ומהשיחות לפרוספקטים מסוננים
+                שמחכים לדבר עם צוות המכירות או לתאם פגישה.
               </p>
             </div>
           </Reveal>

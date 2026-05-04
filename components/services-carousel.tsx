@@ -105,7 +105,7 @@ export function ServicesCarousel() {
                     onMouseEnter={() => setIsPaused(true)}
                     onMouseLeave={() => setIsPaused(false)}
                     className={cn(
-                      "relative flex items-center gap-3 px-5 md:px-7 py-3 md:py-3.5 rounded-full transition-colors duration-500 text-left border",
+                      "relative flex items-center gap-3 px-5 md:px-7 py-3 md:py-3.5 rounded-full transition-colors duration-500 text-start border",
                       isActive
                         ? "bg-white text-[#7f00ff] border-white"
                         : "bg-transparent text-white/60 border-white/20 hover:border-white/50 hover:text-white",
@@ -238,7 +238,7 @@ export function ServicesCarousel() {
                   >
                     <span className="h-1.5 w-1.5 rounded-full bg-white shadow-[0_0_10px_rgba(255,255,255,0.9)]" />
                     <span className="text-white/75 text-[0.6rem] font-medium uppercase tracking-[0.3em]">
-                      Live
+                      פעיל
                     </span>
                   </div>
                 </motion.div>

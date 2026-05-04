@@ -34,6 +34,7 @@ const TRACES = [
           cx={x}
           cy={i % 2 ? 72 : 30}
           fill="currentColor"
+          initial={{ r: 2.5, opacity: 0.3 }}
           animate={{ r: [2.5, 4.5, 2.5], opacity: [0.3, 0.7, 0.3] }}
           transition={{ duration: 2, repeat: Infinity, delay: i * 0.4, ease: "easeInOut" }}
         />
@@ -41,6 +42,7 @@ const TRACES = [
       <motion.circle
         r="2.8"
         fill="currentColor"
+        initial={{ cx: 10, cy: 120, opacity: 0 }}
         animate={{
           cx: [10, 90, 160, 230, 310],
           cy: [120, 120, 72, 72, 40],
@@ -66,6 +68,7 @@ const TRACES = [
           cx={x}
           cy="72"
           fill="currentColor"
+          initial={{ r: 3, opacity: 0.25 }}
           animate={{ r: [3, 5.5, 3], opacity: [0.25, 0.65, 0.25] }}
           transition={{ duration: 1.8, repeat: Infinity, delay: i * 0.35, ease: "easeInOut" }}
         />
@@ -74,6 +77,7 @@ const TRACES = [
         cy="72"
         r="3.5"
         fill="currentColor"
+        initial={{ cx: 10, opacity: 0 }}
         animate={{ cx: [10, 310], opacity: [0, 1, 1, 0] }}
         transition={{
           cx: { duration: 2.4, repeat: Infinity, ease: "easeInOut", repeatDelay: 0.4 },
@@ -101,6 +105,7 @@ const TRACES = [
         cy="62"
         r="2.4"
         fill="currentColor"
+        initial={{ cx: 20, opacity: 0 }}
         animate={{ cx: [20, 140], opacity: [0, 1, 1, 0] }}
         transition={{
           cx: { duration: 1.3, repeat: Infinity, ease: "easeOut", repeatDelay: 0.3 },
@@ -120,6 +125,7 @@ const TRACES = [
           cx={x}
           cy={y}
           fill="currentColor"
+          initial={{ r: i === 4 ? 3.5 : 3, opacity: 0.35 }}
           animate={{
             r: i === 4 ? [3.5, 6, 3.5] : [3, 4.5, 3],
             opacity: [0.35, 0.7, 0.35],
@@ -142,6 +148,7 @@ const TRACES = [
           key={`p${i}`}
           r="2.2"
           fill="currentColor"
+          initial={{ cx: x, cy: y, opacity: 0 }}
           animate={{ cx: [x, 160], cy: [y, 72], opacity: [0, 1, 1, 0] }}
           transition={{
             duration: 1.8,
@@ -214,13 +221,13 @@ export function Features() {
       <div className="container is-narrow flex flex-col items-center gap-16 text-center">
         <Reveal axis="y" distance={24}>
           <div className="flex flex-col items-center gap-10 max-w-4xl">
-            <span className="light-label">Main features</span>
+            <span className="light-label">היכולות המרכזיות</span>
             <h2 className="text-size-h2-compact" style={{ color: "#0b0216" }}>
-              Six systems. <span className="span-h1-gradient">One connected stack.</span>
+              שש מערכות. <span className="span-h1-gradient">סטאק אחד מחובר.</span>
             </h2>
             <p className="text-size-16-16-14 max-w-md" style={{ color: "#55527a" }}>
-              AI-driven tools that qualify leads, book meetings, and scale
-              revenue — on autopilot.
+              כלים מבוססי AI שמסננים לידים, מתאמים פגישות ומגדילים הכנסות —
+              באוטומציה מלאה.
             </p>
           </div>
         </Reveal>
@@ -230,7 +237,7 @@ export function Features() {
             const Icon = feature.icon;
             return (
               <Reveal key={feature.title} axis="y" distance={32} delay={i * 0.06}>
-                <article className="light-card h-full text-left">
+                <article className="light-card h-full text-start">
                   <div className="light-card-illo">
                     <div className="light-card-trace">
                       {TRACES[i % TRACES.length]}

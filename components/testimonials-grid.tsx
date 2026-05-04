@@ -106,7 +106,7 @@ function TestimonialCard({
               <button
                 type="button"
                 onClick={togglePlay}
-                aria-label={isActive ? "Pause video" : "Play video"}
+                aria-label={isActive ? "השהה סרטון" : "הפעל סרטון"}
                 className="group absolute inset-0 flex items-center justify-center"
               >
                 <span
