@@ -2,48 +2,48 @@ import type { CaseStudyItem } from "@/components/case-studies-carousel";
 
 export const CASE_STUDIES: CaseStudyItem[] = [
   {
-    tags: ["Logistics", "Voice", "Integrations"],
-    title: "A 40-truck fleet stopped losing invoices in email.",
+    tags: ["לוגיסטיקה", "סוכני קול", "אינטגרציות"],
+    title: "צי של 40 משאיות הפסיק לאבד חשבוניות במייל.",
     challenge:
-      "Ops was manually pulling invoices and POD docs out of a shared inbox, then keying them into the TMS. Errors were frequent and month-end close slipped for weeks.",
+      "צוות התפעול היה מחלץ ידנית חשבוניות ותעודות משלוח מתיבת מייל משותפת ומקליד אותן ל-TMS. הטעויות היו תכופות, וסגירת החודש נדחתה בשבועות.",
     solution:
-      "We deployed a document-parsing agent on the inbox, synced recognized fields into the TMS via API bridge, and handed exceptions to a Slack-based review queue.",
+      "הטמענו סוכן לניתוח מסמכים על תיבת המייל, סנכרנו את השדות שזוהו ל-TMS דרך גשר API, והעברנו את החריגים לתור בדיקה ב-Slack.",
     stats: [
-      { value: "11k", caption: "Invoices/yr processed" },
-      { value: "92%", caption: "Straight-through rate" },
-      { value: "6d", caption: "Faster close" },
+      { value: "11 אלף", caption: "חשבוניות בשנה בעיבוד" },
+      { value: "92%", caption: "עיבוד אוטומטי מקצה לקצה" },
+      { value: "6 ימים", caption: "סגירת חודש מהירה יותר" },
     ],
     quote:
-      "The month-end scramble is gone. The agent handles the boring 90%, and our controller only sees the exceptions worth seeing.",
+      "הבלגן של סוף החודש נעלם. הסוכן מטפל ב-90% המשעמם, והבקר רואה רק את החריגים שבאמת חשובים.",
   },
   {
-    tags: ["Healthcare", "Agents", "WhatsApp"],
-    title: "Patient intake that qualifies and books while the clinic sleeps.",
+    tags: ["בריאות", "סוכנים חכמים", "WhatsApp"],
+    title: "קליטת מטופלים שמסננת ומתאמת פגישות גם כשהקליניקה ישנה.",
     challenge:
-      "A private therapy practice was losing evening and weekend leads because reception couldn't keep up with WhatsApp and Instagram DMs.",
+      "מרפאת טיפולים פרטית הפסידה לידים בערבים ובסופי שבוע, כי הקבלה לא הצליחה לעמוד בקצב ההודעות ב-WhatsApp וב-Instagram.",
     solution:
-      "A reasoning agent now triages inbound messages, asks the screening questions a human would, books the right therapist, and escalates urgent cases to an on-call line.",
+      "סוכן AI חכם מסנן עכשיו הודעות נכנסות, שואל את אותן שאלות הסינון שאיש צוות היה שואל, מתאם פגישה עם המטפל הנכון ומעביר מקרים דחופים לקו תורן.",
     stats: [
-      { value: "3x", caption: "More booked intakes" },
-      { value: "24/7", caption: "Coverage without staff" },
-      { value: "< 30s", caption: "First response" },
+      { value: "פי 3", caption: "יותר פגישות שנקבעו" },
+      { value: "24/7", caption: "כיסוי בלי כוח אדם" },
+      { value: "פחות מ-30 שניות", caption: "זמן תגובה ראשון" },
     ],
     quote:
-      "It sounds like one of our coordinators. New patients don't realize it's an agent until we tell them — and honestly, it's more consistent than a person on hour nine.",
+      "זה נשמע כמו אחת הרכזות שלנו. מטופלים חדשים בכלל לא מבינים שזה סוכן עד שמספרים להם — ובכנות, זה הרבה יותר עקבי מאדם בשעה התשיעית של המשמרת.",
   },
   {
-    tags: ["B2B SaaS", "Sales", "Voice"],
-    title: "Outbound voice agents doubled a rep team without adding headcount.",
+    tags: ["B2B SaaS", "מכירות", "סוכני קול"],
+    title: "סוכני קול יוצאים שהכפילו את צוות המכירות בלי לגייס איש.",
     challenge:
-      "A SaaS sales team had a backlog of 20,000 free-tier accounts to qualify. Hiring BDRs to call through them wasn't economical.",
+      "צוות מכירות של חברת SaaS היה תקוע עם 20,000 משתמשי Free Tier לסינון. גיוס נציגי BDR שיתקשרו אליהם לא היה כדאי כלכלית.",
     solution:
-      "We built a multi-language voice agent that runs pre-qualification calls, books demos on the AE calendar when intent is confirmed, and hands off full transcripts.",
+      "בנינו סוכן קול רב-לשוני שמבצע שיחות סינון מקדימות, מתאם דמואים ביומן של ה-AE כשמתאשרת כוונת קנייה, ומעביר תמלולים מלאים.",
     stats: [
-      { value: "20k", caption: "Accounts reached" },
-      { value: "4.2x", caption: "Pipeline vs. cohort" },
-      { value: "30+", caption: "Languages" },
+      { value: "20 אלף", caption: "חשבונות שאיתם יצרנו קשר" },
+      { value: "פי 4.2", caption: "פייפליין מול קבוצת ביקורת" },
+      { value: "30+", caption: "שפות" },
     ],
     quote:
-      "Our AEs walk into every call with full context. The agent does the work nobody wanted to do, and the demos that land are real.",
+      "ה-AEs נכנסים לכל שיחה עם הקשר מלא. הסוכן עושה את העבודה שאף אחד לא רצה לעשות, והדמואים שמתממשים — אמיתיים.",
   },
 ];

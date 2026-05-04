@@ -16,14 +16,14 @@ export function Clients() {
       <div className="container relative z-10">
         <Reveal axis="y" distance={24}>
           <div className="flex max-w-xl flex-col gap-5">
-            <SectionLabel>Our clients</SectionLabel>
+            <SectionLabel>הלקוחות שלנו</SectionLabel>
             <h2 className="text-size-h2 text-color-white">
-              Trusted by operators{" "}
-              <GradientText>who ship at scale.</GradientText>
+              עסקים שעובדים בנפח גדול{" "}
+              <GradientText>סומכים עלינו.</GradientText>
             </h2>
             <p className="text-size-16-16-14 text-color-ddbbf1 text-weight-300">
-              From logistics fleets to private clinics — teams across industries
-              running automation that just works.
+              מציי משאיות ועד קליניקות פרטיות — צוותים מכל התעשיות
+              מריצים אצלנו אוטומציה שפשוט עובדת.
             </p>
           </div>
         </Reveal>

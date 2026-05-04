@@ -12,13 +12,13 @@ export function Testimonials() {
       <div className="container flex flex-col gap-12">
         <Reveal axis="y" distance={24}>
           <div className="flex flex-col gap-5 max-w-3xl">
-            <SectionLabel>Client testimonials</SectionLabel>
+            <SectionLabel>המלצות לקוחות</SectionLabel>
             <h2 className="text-size-h2 text-color-white">
-              The operators who <GradientText>shipped with us.</GradientText>
+              העסקים ש<GradientText>עלו לאוויר איתנו.</GradientText>
             </h2>
             <p className="text-size-16-16-14 text-color-ddbbf1 text-weight-300">
-              Hear it from the teams running the systems — what changed, what
-              they kept, and what surprised them.
+              שמעו מהצוותים שמריצים את המערכות — מה השתנה, מה הם השאירו
+              ומה הפתיע אותם.
             </p>
           </div>
         </Reveal>

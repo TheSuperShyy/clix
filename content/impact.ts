@@ -7,20 +7,20 @@ export type ImpactMetric = {
 export const IMPACT: ImpactMetric[] = [
   {
     value: "0",
-    caption: "Leads lost to slow follow-up or forgotten tasks",
+    caption: "לידים שאבדו בגלל מענה איטי או משימה שנשכחה",
   },
   {
     value: "24/7",
-    caption: "Coverage — nights, weekends, holidays. Your agents never sleep.",
+    caption: "כיסוי — לילות, סופי שבוע וחגים. הסוכנים שלכם לא ישנים.",
   },
   {
     value: "30+",
     caption:
-      "Languages handled at human-like latency — one system for global teams.",
+      "שפות בקצב שיחה אנושי — מערכת אחת לצוותים גלובליים.",
     highlight: true,
   },
   {
     value: "10,000+",
-    caption: "Hours saved per month across our active engagements.",
+    caption: "שעות שנחסכות בחודש בכל הפרויקטים הפעילים שלנו.",
   },
 ];

@@ -88,7 +88,7 @@ const KEYFRAMES = `
   }
 `;
 
-export function SignalPill({ label = "Signal FAQ" }: { label?: string }) {
+export function SignalPill({ label = "שאלות נפוצות" }: { label?: string }) {
   return (
     <div className="faq-clix-pill" aria-label={label}>
       <span className="faq-clix-pill__beam" aria-hidden />
@@ -159,7 +159,7 @@ export function FAQAccordion({ items }: Props) {
               aria-controls={panelId}
               aria-expanded={open}
               onClick={() => setOpenIndex(open ? null : index)}
-              className="relative flex w-full items-start gap-5 px-6 py-6 text-left transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[rgba(228,168,255,0.4)] md:px-7"
+              className="relative flex w-full items-start gap-5 px-6 py-6 text-start transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[rgba(228,168,255,0.4)] md:px-7"
             >
               <span className="relative flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/[0.04] transition-transform duration-500 group-hover:scale-105">
                 <span

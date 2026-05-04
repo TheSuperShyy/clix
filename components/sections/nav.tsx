@@ -73,7 +73,7 @@ export function Nav() {
       <div className="container is-header flex items-center justify-between">
         <a
           href="#"
-          aria-label="CLIX home"
+          aria-label="דף הבית של CLIX"
           className="flex items-center gap-2.5 text-white"
         >
           <span
@@ -106,15 +106,15 @@ export function Nav() {
 
         <div className="desktop-only flex items-center gap--16">
           <GlassButton href={LOGIN_HREF} variant="header">
-            Log in
+            כניסה
           </GlassButton>
-          <GlassButton href={CTA_HREF}>Book a Demo</GlassButton>
+          <GlassButton href={CTA_HREF}>קבעו דמו</GlassButton>
         </div>
 
         <button
           type="button"
           className="desktop-hide inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/5 text-white"
-          aria-label={open ? "Close menu" : "Open menu"}
+          aria-label={open ? "סגור תפריט" : "פתח תפריט"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
         >
@@ -136,9 +136,9 @@ export function Nav() {
           ))}
           <div className="mt-auto flex flex-col gap--16">
             <GlassButton href={LOGIN_HREF} variant="header">
-              Log in
+              כניסה
             </GlassButton>
-            <GlassButton href={CTA_HREF}>Book a Demo</GlassButton>
+            <GlassButton href={CTA_HREF}>קבעו דמו</GlassButton>
           </div>
         </div>
       )}

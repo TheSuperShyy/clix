@@ -15,7 +15,7 @@ export function CircleArrowButton({
   onClick,
   label,
 }: Props) {
-  const Icon = direction === "prev" ? ArrowLeft : ArrowRight;
+  const Icon = direction === "prev" ? ArrowRight : ArrowLeft;
   return (
     <button
       type="button"

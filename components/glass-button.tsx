@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import type { ReactNode } from "react";
 
 type GlassButtonProps = {
@@ -42,7 +42,7 @@ export function GlassButton({
       >
         <span className="relative z-[2]">{children}</span>
         <span className="arrow relative z-[2]" aria-hidden>
-          {icon ?? <ArrowRight color="white" strokeWidth={2.5} />}
+          {icon ?? <ArrowLeft color="white" strokeWidth={2.5} />}
         </span>
       </a>
       <span className="btn-glow" />

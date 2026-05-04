@@ -1,11 +1,11 @@
 export const HERO = {
-  headingLead: "Hyper-Automation.",
-  headingGradient: "Built for Operators.",
-  sub: "AI agents, voice, and integrations that work your pipeline at scale — qualifying leads, booking meetings, and handing off hot prospects to your closers. Engineered by Unit 8200 and Technion alumni.",
-  cta: { label: "Try it now", href: "#contact" },
+  headingLead: "היפר-אוטומציה.",
+  headingGradient: "בנויה לאנשי הביצוע.",
+  sub: "סוכני AI, סוכני קול ואינטגרציות שמריצים את כל המשפך השיווקי שלכם — מסננים לידים, מתאמים פגישות ומעבירים פרוספקטים חמים ישר לסוגרים. פותח על ידי בוגרי יחידה 8200 והטכניון.",
+  cta: { label: "התחילו עכשיו", href: "#contact" },
   chips: [
-    { text: "Your always-on automation partner", iconName: "Sparkles" },
-    { text: "Qualified appointments only", iconName: "Check" },
-    { text: "30+ languages, human-like latency", iconName: "Globe" },
+    { text: "שותף אוטומציה שעובד 24/7", iconName: "Sparkles" },
+    { text: "רק פגישות איכותיות, אפס רעש", iconName: "Check" },
+    { text: "מעל 30 שפות, בקצב שיחה טבעי", iconName: "Globe" },
   ] as const,
 };

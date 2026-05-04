@@ -40,6 +40,7 @@ export function BenefitsCarousel({ items }: Props) {
 
       <div className="benefits-tilt-stage">
         <Swiper
+          dir="rtl"
           className="benefits-swiper benefits-tilt-swiper"
           slidesPerView={1.1}
           spaceBetween={24}
@@ -69,7 +70,7 @@ export function BenefitsCarousel({ items }: Props) {
                   </p>
                   <div className="rounded-xl bg-white/5 p-3">
                     <div className="mb-1 text-[0.65rem] uppercase tracking-wide text-[#c89bff]">
-                      Impact
+                      התוצאה
                     </div>
                     <div className="text-sm font-medium text-white">
                       {item.impact}

@@ -5,43 +5,43 @@ export type FooterColumn = {
 
 export const FOOTER_COLUMNS: FooterColumn[] = [
   {
-    title: "Services",
+    title: "שירותים",
     links: [
-      { label: "AI Voice Agents", href: "#services" },
-      { label: "Lead Qualification", href: "#services" },
-      { label: "Integrations", href: "#services" },
-      { label: "Training & Lectures", href: "#services" },
+      { label: "סוכני קול AI", href: "#services" },
+      { label: "סינון לידים", href: "#services" },
+      { label: "אינטגרציות", href: "#services" },
+      { label: "הדרכות והרצאות", href: "#services" },
     ],
   },
   {
-    title: "Company",
+    title: "החברה",
     links: [
-      { label: "Why CLIX", href: "#benefits" },
-      { label: "Clients", href: "#clients" },
-      { label: "FAQ", href: "#faq" },
-      { label: "Contact", href: "#contact" },
+      { label: "למה CLIX", href: "#benefits" },
+      { label: "לקוחות", href: "#clients" },
+      { label: "שאלות נפוצות", href: "#faq" },
+      { label: "צרו קשר", href: "#contact" },
     ],
   },
   {
-    title: "Resources",
+    title: "משאבים",
     links: [
-      { label: "Blog", href: "#" },
-      { label: "Playbooks", href: "#" },
-      { label: "Integrations List", href: "#" },
+      { label: "בלוג", href: "#" },
+      { label: "פלייבוקים", href: "#" },
+      { label: "רשימת אינטגרציות", href: "#" },
     ],
   },
 ];
 
 export const FOOTER_TAGS = [
-  "Hyper-Automation",
+  "היפר-אוטומציה",
   "24/7",
-  "30+ Languages",
-  "8200-Built",
-  "No-Bullshit",
-  "ROI-First",
-  "Custom-Coded",
-  "Integration-Deep",
-  "Engineer-Led",
+  "מעל 30 שפות",
+  "באים מ-8200",
+  "בלי בולשיט",
+  "ROI במרכז",
+  "קוד מותאם אישית",
+  "אינטגרציות לעומק",
+  "ישירות מהמהנדסים",
 ];
 
 export const FOOTER_CONTACT = {

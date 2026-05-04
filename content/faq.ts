@@ -2,33 +2,33 @@ export type FaqItem = { q: string; a: string; meta?: string };
 
 export const FAQ_ITEMS: FaqItem[] = [
   {
-    q: "What is Hyper-Automation?",
-    a: "It's not a single tool or chatbot. Hyper-Automation is a connected ecosystem where multiple AI models talk to each other and to your existing software — CRM, inbox, calendar, WhatsApp, logistics tools — so entire workflows run without a human in the loop.",
-    meta: "Foundations",
+    q: "מה זה היפר-אוטומציה?",
+    a: "זה לא כלי בודד או צ'אטבוט. היפר-אוטומציה היא אקוסיסטם מחובר שבו כמה מודלי AI מדברים ביניהם ועם הכלים שכבר עובדים אצלכם — CRM, מייל, יומן, WhatsApp, מערכות לוגיסטיקה — וכל תהליך עבודה רץ ללא מעורבות אנושית.",
+    meta: "יסודות",
   },
   {
-    q: "How is this different from a chatbot?",
-    a: "A chatbot answers questions inside one channel. Our agents reason, take actions across your stack, make outbound calls, qualify leads, book meetings, reconcile invoices, and hand off cleanly when a human is actually needed.",
-    meta: "Capabilities",
+    q: "במה זה שונה מצ'אטבוט?",
+    a: "צ'אטבוט עונה על שאלות בערוץ אחד. הסוכנים שלנו חושבים, פועלים על פני כל הסטאק שלכם, יוזמים שיחות יוצאות, מסננים לידים, מתאמים פגישות, מתאימים חשבוניות, ומעבירים בצורה נקייה ברגע שבן אדם באמת נחוץ.",
+    meta: "יכולות",
   },
   {
-    q: "What tools do you integrate with?",
-    a: "Salesforce, HubSpot, Monday, ClickUp, WhatsApp, Slack, Gmail, the common TMS/EMR stacks — plus custom API bridges for legacy software that wasn't built to talk to AI.",
-    meta: "Integrations",
+    q: "אילו כלים אתם משלבים?",
+    a: "Salesforce, HubSpot, Monday, ClickUp, WhatsApp, Slack, Gmail, מערכות TMS/EMR נפוצות — וגם גשרי API מותאמים אישית למערכות לגאסי שלא נבנו כדי לתקשר עם AI.",
+    meta: "אינטגרציות",
   },
   {
-    q: "How long does a typical build take?",
-    a: "Discovery and scoping is 1–2 weeks. Most first deployments go live in 4–6 weeks. We ship in small, working increments rather than one big-bang reveal.",
-    meta: "Timeline",
+    q: "כמה זמן לוקח פרויקט ממוצע?",
+    a: "אפיון וסקופינג — שבוע עד שבועיים. רוב ההטמעות הראשונות עולות לאוויר תוך 4-6 שבועות. אנחנו עובדים בשלבים קצרים ועובדים, לא בהשקה אחת גדולה.",
+    meta: "לוחות זמנים",
   },
   {
-    q: "Do you train our team?",
-    a: "Yes. We run workshops for leadership and operators, and we leave playbooks tailored to your industry. The point is that your team owns the system after us — not that you depend on us forever.",
-    meta: "Enablement",
+    q: "אתם מכשירים את הצוות שלנו?",
+    a: "בהחלט. אנחנו מעבירים סדנאות להנהלה ולצוותי התפעול, ומשאירים לכם פלייבוקים מותאמים לתעשייה שלכם. המטרה היא שהצוות שלכם יהיה הבעלים של המערכת אחרינו — לא שתישארו תלויים בנו לנצח.",
+    meta: "הטמעה",
   },
   {
-    q: "What industries do you specialize in?",
-    a: "Logistics, healthcare and therapy, B2B sales orgs, and content-heavy businesses. The through-line is: manual, repetitive work where errors and hours compound, and where ROI is measurable.",
-    meta: "Industries",
+    q: "באילו תעשיות אתם מתמחים?",
+    a: "לוגיסטיקה, בריאות וטיפולים, צוותי מכירות B2B ועסקים עתירי תוכן. הקו המחבר: עבודה ידנית וחזרתית שבה טעויות ושעות מצטברות, ושבה אפשר למדוד ROI.",
+    meta: "תעשיות",
   },
 ];
